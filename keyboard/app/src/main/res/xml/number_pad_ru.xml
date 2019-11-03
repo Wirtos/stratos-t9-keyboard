@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:horizontalGap="0dp"
+    android:keyWidth="71dp"
+    android:keyHeight="43dp"
+    android:verticalGap="0dp"
+    android:id="@+id/ru">
+
+    <Row android:rowEdgeFlags="top">
+        <Key
+            android:codes="46,44,63,33,45,64,95,47,49"
+            android:keyEdgeFlags="left"
+            android:keyLabel="1" />
+        <Key
+            android:codes="1072,1073,1074,1075,50"
+            android:keyLabel="2" />
+        <Key
+            android:codes="1076,1077,1105,1078,1079,51"
+            android:keyEdgeFlags="right"
+            android:keyLabel="3" />
+    </Row>
+
+    <Row>
+        <Key
+            android:codes="1080,1081,1082,1083,52"
+            android:keyEdgeFlags="left"
+            android:keyLabel="4" />
+        <Key
+            android:codes="1084,1085,1086,1087,53"
+            android:keyLabel="5" />
+        <Key
+            android:codes="1088,1089,1090,1091,54"
+            android:keyEdgeFlags="right"
+            android:keyLabel="6" />
+    </Row>
+
+    <Row>
+        <Key
+            android:codes="1092,1093,1094,1095,55"
+            android:keyEdgeFlags="left"
+            android:keyLabel="7" />
+        <Key
+            android:codes="1096,1097,1098,1099,56"
+            android:keyLabel="8" />
+        <Key
+            android:codes="1100,1101,1102,1103,57"
+            android:keyEdgeFlags="right"
+            android:keyLabel="9" />
+    </Row>
+
+    <Row
+        android:keyHeight="55dp"
+        android:rowEdgeFlags="bottom">>
+
+        <Key
+            android:codes="-5"
+            android:isRepeatable="true"
+            android:keyEdgeFlags="left"
+            android:keyIcon="@drawable/ic_backspace" />
+        <Key
+            android:codes="32,43,48"
+            android:keyLabel="0" />
+        <Key
+            android:codes="-1"
+            android:keyEdgeFlags="right"
+            android:keyIcon="@drawable/ic_shift" />
+    </Row>
+
+</Keyboard>

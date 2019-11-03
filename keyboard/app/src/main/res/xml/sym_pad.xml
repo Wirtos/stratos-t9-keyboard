@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sym"
+    android:horizontalGap="0dp"
+    android:keyWidth="71dp"
+    android:keyHeight="43dp"
+    android:verticalGap="0dp">
+
+    <Row android:rowEdgeFlags="top">
+        <Key
+            android:codes="46,44,45,95,33,63,64,161,191"
+            android:keyEdgeFlags="left"
+            android:keyLabel="" />
+        <Key
+            android:codes="126,92,47,38,34,58,59"
+            android:keyLabel="" />
+        <Key
+            android:codes="39,94,124,43,61,37,42"
+            android:keyEdgeFlags="right"
+            android:keyLabel="" />
+    </Row>
+
+    <Row>
+        <!--brackets-->
+        <Key
+            android:codes="40,41,60,62,123,125,91,93"
+            android:keyEdgeFlags="left"
+            android:keyLabel="" />
+
+        <!--currency-->
+        <Key
+            android:codes="8364,163,8372"
+            android:keyLabel="" />
+        <!--currency-->
+        <Key
+            android:keyEdgeFlags="right"
+            android:codes="8381,36,165,162"
+            android:keyLabel="" />
+    </Row>
+
+    <Row>
+        <Key
+            android:codes="32"
+            android:keyEdgeFlags="left"
+            android:keyLabel=""
+         />
+        <Key
+            android:codes="32"
+            android:keyLabel="" />
+        <Key
+            android:codes="32"
+            android:keyEdgeFlags="right"
+            android:keyLabel="" />
+    </Row>
+
+    <Row
+        android:keyHeight="55dp"
+        android:rowEdgeFlags="bottom">
+        <Key
+            android:codes="-5"
+            android:isRepeatable="true"
+            android:keyEdgeFlags="left"
+            android:keyIcon="@drawable/ic_backspace" />
+        <Key
+            android:codes="32"
+            android:isRepeatable="true"
+            android:keyIcon="@drawable/ic_space"/>
+        <Key
+            android:codes="-1"
+            android:keyEdgeFlags="right"
+            android:keyIcon="@drawable/ic_shift" />
+    </Row>
+
+</Keyboard>
