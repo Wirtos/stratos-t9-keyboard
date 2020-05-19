@@ -35,6 +35,7 @@ class T9InputMethodService : InputMethodService(), KeyboardView.OnKeyboardAction
     private val mENTER: Int = 66
     private var previousLength = 0
     private val context = this
+    private var mPreviosDot = false
 
 
     override fun onCreate() {
@@ -204,7 +205,13 @@ class T9InputMethodService : InputMethodService(), KeyboardView.OnKeyboardAction
                 toggleLanguage()
             }
             else -> {
+                if (primaryCode == 46) { // dot
+                    mPreviosDot = true
+                    toggleCapsLock()
+                }
+
                 handleCharacter(primaryCode)
+
             }
         }
     }
@@ -237,7 +244,6 @@ class T9InputMethodService : InputMethodService(), KeyboardView.OnKeyboardAction
             if (after != null) {
                 end = after
             }
-
         }
 
         textPreview?.text = mComposing
@@ -256,7 +262,11 @@ class T9InputMethodService : InputMethodService(), KeyboardView.OnKeyboardAction
         val previewLayout: View = customInputMethodView.findViewById(R.id.textPreviewLayout)
 
         if (mComposing.isEmpty()) {
-            // composing is empty, set red(cancel) border
+            // composing is empty, set red(cancel) border and set shift to work once
+            if (keyboardView?.isShifted == false) {
+                toggleCapsLock()
+                mPreviosDot = true
+            }
             previewLayout.setBackgroundResource(R.drawable.background_border_red)
         } else {
             previewLayout.setBackgroundResource(R.drawable.background_border_green)
@@ -272,8 +282,15 @@ class T9InputMethodService : InputMethodService(), KeyboardView.OnKeyboardAction
 
         var pc = primaryCode
         if (isInputViewShown) {
-            if (keyboardView?.isShifted == true) {
+            if (keyboardView?.isShifted == true or mPreviosDot) {
                 pc = Character.toUpperCase(primaryCode)
+                if (mPreviosDot and (primaryCode != 46)) { // handle dot
+                    if (mComposing.isNotEmpty()) {
+                        mComposing.append(20) // append space before next letter
+                    }
+                    mPreviosDot = false
+                    toggleCapsLock()
+                }
             }
         }
 

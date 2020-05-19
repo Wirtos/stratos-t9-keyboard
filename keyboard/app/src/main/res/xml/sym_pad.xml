@@ -65,10 +65,5 @@
             android:codes="32"
             android:isRepeatable="true"
             android:keyIcon="@drawable/ic_space"/>
-        <Key
-            android:codes="-1"
-            android:keyEdgeFlags="right"
-            android:keyIcon="@drawable/ic_shift" />
     </Row>
-
 </Keyboard>
